@@ -3,6 +3,8 @@
 ### Virtual Machine Template
 
 ```
+main.tf
+
 terraform {
   required_providers {
     google = {
@@ -74,3 +76,16 @@ resource "google_compute_instance_from_template" "tpl" {
 }
 
 ```
+
+```
+install-docker-nginx.sh
+#! /bin/bash
+apt update -y
+apt upgrade -y
+apt install nginx -y
+service nginx start
+snap install docker --classic
+service docker start
+```
+
+
